@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>EasyBuy1.2</display-name>
+	<welcome-file-list>
+		<welcome-file>index</welcome-file>
+	</welcome-file-list>
+	<!-- =================ENCODINGFILTER============== -->
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>com.gpg.amazon.filter.EncodeFilter</filter-class>
+	</filter>
+	<!-- ==================PAGEFILTE=================== -->
+	<filter>
+		<filter-name>PageFilter</filter-name>
+		<filter-class>com.gpg.amazon.filter.PageFilter</filter-class>
+	</filter>
+	<!-- ==================LOGINFILTE=================== -->
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.gpg.amazon.filter.LoginFilter</filter-class>
+	</filter>
+
+	<servlet>
+		<servlet-name>CategoryServlet</servlet-name>
+		<servlet-class>com.gpg.amazon.servlet.CategoryServlet</servlet-class>
+	</servlet>
+
+	<!-- ================CARTSERVLET=============== -->
+	<servlet>
+		<servlet-name>CartServlet</servlet-name>
+		<servlet-class>com.gpg.amazon.servlet.CartServlet</servlet-class>
+	</servlet>
+
+	<!-- ===============INDEXSERVLET=============== -->
+	<servlet>
+		<servlet-name>IndexServlet</servlet-name>
+		<servlet-class>com.gpg.amazon.servlet.IndexServlet</servlet-class>
+	</servlet>
+	<!-- ================USERSERVLET============== -->
+	<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>com.gpg.amazon.servlet.UserServlet</servlet-class>
+	</servlet>
+	<!-- =================NEWSSERVLET================== -->
+	<servlet>
+		<servlet-name>NewsServlet</servlet-name>
+		<servlet-class>com.gpg.amazon.servlet.NewsServlet</servlet-class>
+	</servlet>
+	<!-- ===============COMMENTSERVLET=============== -->
+	<servlet>
+		<servlet-name>CommentServlet</servlet-name>
+		<servlet-class>com.gpg.amazon.servlet.CommentServlet</servlet-class>
+	</servlet>
+
+	<!-- =============PRODUCTSERVLET============= -->
+	<servlet>
+		<servlet-name>ProductServlet</servlet-name>
+		<servlet-class>com.gpg.amazon.servlet.ProductServlet</servlet-class>
+	</servlet>
+
+	<!-- ==============PRODUCTSERVLETMAPPING============= -->
+	<servlet-mapping>
+		<servlet-name>ProductServlet</servlet-name>
+		<url-pattern>/allProduct</url-pattern>
+		<url-pattern>/productDetail</url-pattern>
+	</servlet-mapping>
+
+	<!-- ===========INDEXSERVLETMAPPING=========== -->
+	<servlet-mapping>
+		<servlet-name>IndexServlet</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	<!-- ===========USERSERVLETMAPPING============= -->
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/imageCode</url-pattern>
+		<url-pattern>/checkCode</url-pattern>
+		<url-pattern>/checkEmail</url-pattern>
+		<url-pattern>/checkUserName</url-pattern>
+		<url-pattern>/login</url-pattern>
+		<url-pattern>/userInfo</url-pattern>
+		<url-pattern>/userExit</url-pattern>
+		<url-pattern>/register</url-pattern>
+		<url-pattern>/manage</url-pattern>
+	</servlet-mapping>
+
+	<!-- ==============NEWSSERVLETMAPPING============= -->
+	<servlet-mapping>
+		<servlet-name>NewsServlet</servlet-name>
+		<url-pattern>/newsAll</url-pattern>
+		<url-pattern>/newsDetail</url-pattern>
+	</servlet-mapping>
+	<!-- =============CARTSERVLETMAPPING========= -->
+	<servlet-mapping>
+		<servlet-name>CartServlet</servlet-name>
+		<url-pattern>/addToCart</url-pattern>
+		<url-pattern>/goingToBuy</url-pattern>
+		<url-pattern>/carDelete</url-pattern>
+		<url-pattern>/car</url-pattern>
+		<url-pattern>/alterCart</url-pattern>
+	</servlet-mapping>
+
+	<!-- ==============COMMENTSERVLETMAPPING============== -->
+	<servlet-mapping>
+		<servlet-name>CommentServlet</servlet-name>
+		<url-pattern>/addComment</url-pattern>
+		<url-pattern>/commentAll</url-pattern>
+	</servlet-mapping>
+
+	<!-- -->
+	<servlet-mapping>
+		<servlet-name>CategoryServlet</servlet-name>
+		<url-pattern>/category</url-pattern>
+	</servlet-mapping>
+
+	<!-- ====================ENCODINGFILTERMAPPING===================== -->
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- ====================ENCODINGFILTERMAPPING===================== -->
+	<filter-mapping>
+		<filter-name>PageFilter</filter-name>
+		<url-pattern>/manage</url-pattern>
+	</filter-mapping>
+	<!-- ====================ENCODINGFILTERMAPPING===================== -->
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/car</url-pattern>
+		<url-pattern>/addToCart</url-pattern>
+		<url-pattern>/commentAll</url-pattern>
+		<url-pattern>/addComment</url-pattern>
+		<url-pattern>/goingToBuy</url-pattern>
+	</filter-mapping>
+</web-app>
