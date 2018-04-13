@@ -34,6 +34,7 @@
 				<c:if test="${!empty requestScope.carts }">
 					<table>
 						<tr>
+							<th></th>
 							<th>商品名称</th>
 							<th>商品价格</th>
 							<th>购买数量</th>
@@ -45,6 +46,7 @@
 
 						<c:forEach var="cart" items="${requestScope.carts }">
 							<tr id="product_id_1">
+								<td><input type="checkbox" name="cid" value="${cart.cid }" /></td>
 								<td class="thumb"><img style="width: 100px; height: 100px;"
 									src="${pageContext.request.contextPath }/${cart.product.p_file_name}" /><a
 									href="productDetail?pid=${cart.product.p_id }">${cart.product.p_name }</a></td>
@@ -56,10 +58,10 @@
 								</td>
 								<td class="number"><c:set var="hcid"
 										value="${cart.product.p_cate_id }"></c:set> <input
-									type="button" id="minus" value=" - " onclick="reduce(${cart.cid })"
-									width="3px" name="minusButton"> <input id="${cart.cid }"
-									type="text" name="number" value="${cart.quantity }"
-									maxlength="5" size="1"
+									type="button" id="minus" value=" - "
+									onclick="reduce(${cart.cid })" width="3px" name="minusButton">
+									<input id="${cart.cid }" type="text" name="number"
+									value="${cart.quantity }" maxlength="5" size="1"
 									style="text-align: center; vertical-align: middle"
 									onblur="checkStock(${hcid })" /> <input type="button" id="add"
 									value=" + " width="2px" onclick="increase(${cart.cid })"

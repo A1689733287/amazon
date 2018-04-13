@@ -137,31 +137,6 @@ function checkForm(frm) {
 	return true;
 }
 
-/*
- * function showChater() { var _chater = document.createElement("div");
- * _chater.setAttribute("id", "chater"); var _dl = document.createElement("dl");
- * var _dt = document.createElement("dt"); var _dd =
- * document.createElement("dd"); var _a = document.createElement("a");
- * _a.setAttribute("href", "#"); _a.onclick = openRoom;
- * _a.appendChild(document.createTextNode("在线聊天")); _dd.appendChild(_a);
- * _dl.appendChild(_dt); _dl.appendChild(_dd); _chater.appendChild(_dl);
- * document.body.appendChild(_chater); }
- * 
- * function openRoom() { window.open("chat-room.jsp", "chater",
- * "status=0,scrollbars=0,menubar=0,location=0,width=600,height=400"); }
- */
-
-/*
- * function scrollChater() { var chater = document.getElementById("chater"); var
- * scrollTop = document.documentElement.scrollTop; var scrollLeft =
- * document.documentElement.scrollLeft; chater.style.left = scrollLeft +
- * document.documentElement.clientWidth - 92 + "px"; chater.style.top =
- * scrollTop + document.documentElement.clientHeight - 25 + "px"; }
- * 
- * function inArray(array, str) { for (a in array) { if (array[a] == str) return
- * true; } return false; }
- */
-
 function emailExist() {
 	var flag = true;
 	var email = $("[name=email]").val();
